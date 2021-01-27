@@ -16,15 +16,11 @@ use Illuminate\Http\Request;
 
 Route::get('/', function (Request $request) {
 
-
     $search = $request->input('search');
-
-
-    $users = $search ? User::where('name', 'LIKE', "%$search%")->simplePaginate(10): User::simplePaginate(10);
-
+    $rows =10;
 
     return view('welcome', [
-        'users' => $users,
+        'users' => $search ? User::where('name', 'LIKE', "%$search%")->simplePaginate($rows): User::simplePaginate($rows),
         'search' => $search
     ]);
 });
