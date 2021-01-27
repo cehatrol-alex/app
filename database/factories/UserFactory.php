@@ -42,7 +42,7 @@ class UserFactory extends Factory
         return $this->afterCreating(function (User $user) {
             $avatar = new Avatar();
             $img = new Image();
-            $img->image = $avatar->create($user->name)->toBase64();
+            $img->image = $avatar->create($user->name)->setBackground('#'.str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, '0', STR_PAD_LEFT))->toBase64();
             $img->user_id = $user->id;
             $img->save();
 
