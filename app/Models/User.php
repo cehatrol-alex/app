@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property string $name
- * @property string $image
- * @property Image[] $images
  */
 class User extends Model
 {
@@ -24,7 +22,7 @@ class User extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'image'];
+    protected $fillable = ['name'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
