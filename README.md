@@ -9,5 +9,5 @@ docker-compose exec app php artisan migrate:refresh --seed
 ## Get
 
 ```
-http://localhost:8080
+http://localhost
 ```
